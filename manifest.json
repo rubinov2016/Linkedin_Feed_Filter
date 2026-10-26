@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Feed Filter",
+  "version": "1.0.0",
+  "description": "Hides LinkedIn feed posts by author gender, headline keywords and selfie photos. Load & condense mode auto-scrolls the feed and shows only what survives.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://media.licdn.com/*",
+    "https://*.licdn.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["lib/face-api.min.js", "defaults.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["models/*"],
+      "matches": ["https://www.linkedin.com/*"]
+    }
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "LinkedIn Feed Filter"
+  }
+}

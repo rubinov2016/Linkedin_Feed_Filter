@@ -28,4 +28,4 @@ Popup → **Load & condense**: the page auto-scrolls until N seconds or M posts 
 - Models: face-api.js 0.22.2 `tiny_face_detector` + `age_gender_model` (~620 KB), bundled in `models/`.
 - LinkedIn changes its markup periodically. If posts stop being detected, edit the **DOM selectors** JSON in Options (Advanced) instead of reinstalling.
 - Set `window.LFF_DEBUG = true` in the page console for verbose logs.
-- Gender detection is a heuristic by design and will misfire on unisex names and ambiguous photos; the stub's **show** link is there to check it.# Linkedin_Feed_Filter
+- Gender detection is a heuristic by design and will misfire on unisex names and ambiguous photos; the stub's **show** link is there to check it.
